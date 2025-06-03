@@ -1,5 +1,5 @@
 resource "aws_instance" "ec2_linux_public" {
-  availability_zone           = var.azs[0] #Precisa melhorar
+  availability_zone           = var.azs[0] 
   ami                         = var.ami-linux
   instance_type               = var.instance_type
   key_name                    = var.aws-key
@@ -17,7 +17,7 @@ resource "aws_instance" "ec2_linux_public" {
 
 resource "aws_instance" "ec2_linux_az_1_neto" {
   count             = var.instances_count
-  availability_zone = var.azs[1] #não é a melhor forma Precisa melhorar
+  availability_zone = var.azs[1]
   ami               = var.ami-linux
   instance_type     = var.instance_type
   key_name          = var.aws-key
@@ -59,7 +59,7 @@ resource "aws_instance" "ec2_linux_az_1_neto" {
 
 resource "aws_instance" "ec2_linux_az_2_neto" {
   count             = var.instances_count
-  availability_zone = var.azs[2] #não é a melhor forma Precisa melhorar
+  availability_zone = var.azs[2]
   ami               = var.ami-linux
   instance_type     = var.instance_type
   key_name          = var.aws-key
