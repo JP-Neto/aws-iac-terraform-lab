@@ -2,7 +2,7 @@ resource "aws_route_table" "routeTableDmz" {
   vpc_id = aws_vpc.vpc-east.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.cidr_dmz
     gateway_id = aws_internet_gateway.igateway.id
   }
 
