@@ -2,6 +2,8 @@
 
 Este projeto demonstra o provisionamento completo de uma infraestrutura na **AWS utilizando Terraform**, com separação por camadas (DMZ, APP, BD), foco em **segurança**, **modularidade**, **balanceamento de carga** e **armazenamento seguro** via S3.
 
+As instâncias Linux da camada APP também instalam automaticamente o **Apache via `user_data`**, exibindo uma **página web dinâmica com a Availability Zone da instância**, o que permite verificar visualmente o balanceamento feito pelo ALB.
+
 ---
 
 ## 📁 Estrutura do Projeto
@@ -69,6 +71,17 @@ Este projeto demonstra o provisionamento completo de uma infraestrutura na **AWS
 - Criar um **Application Load Balancer (ALB)**:
   - Listener na porta **80 (HTTP)**
   - Target Group com instâncias da camada APP
+
+---
+
+### 🔹 Instâncias com Apache e Página Web Dinâmica
+
+- As **instâncias Linux da APP** utilizam `user_data` para:
+  - Instalar e configurar o Apache
+  - Exibir em `/var/www/html/index.html` a **Availability Zone da instância**
+  - Criar página `/health.html` para **verificação de status**
+
+Isso permite **testar o balanceamento** do ALB visualizando de qual AZ veio a resposta.
 
 ---
 
