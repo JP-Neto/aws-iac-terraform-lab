@@ -48,10 +48,10 @@ module "aplicacao" {
 
 }
 
-# module "Armazenamento" {
-#   source           = "./Armazenamento"
-#   bucket_name      = var.bucket_name
-#   subnetPrivateIds = module.conectividade.private_subnet_ids
-# }
+module "Armazenamento" {
+   source           = "./Armazenamento"
+   bucket_name      = var.bucket_name
+   subnetPrivateIds = module.conectividade.private_subnet_ids
+ }
 
 
