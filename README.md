@@ -106,8 +106,11 @@ terraform plan
 # Aplica as configurações e provisiona a infraestrutura
 terraform apply
 ```
+## 💡 Variáveis
 
----
+Este projeto utiliza um arquivo `terraform.tfvars` (não versionado) para armazenar os valores sensíveis e específicos do ambiente.  
+Use o arquivo `terraform.tfvars` como base para preenchimento.
+
 
 ## 📌 Pré-requisitos
 
